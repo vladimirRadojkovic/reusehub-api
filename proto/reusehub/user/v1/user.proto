@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package reusehub.user.v1;
+
+option go_package = "genproto/reusehub/user/v1;userv1";
+
+// UserService provides operations for managing users
+service UserService {
+  // GetUser retrieves a user by ID
+  rpc GetUser(GetUserRequest) returns (GetUserResponse) {}
+  
+  // CreateUser creates a new user
+  rpc CreateUser(CreateUserRequest) returns (CreateUserResponse) {}
+}
+
+// User represents a user in the system
+message User {
+  // Unique identifier for the user
+  string id = 1;
+  
+  // User's first name
+  string first_name = 2;
+  
+  // User's last name
+  string last_name = 3;
+  
+  // User's email address
+  string email = 4;
+}
+
+// GetUserRequest is the request type for the GetUser RPC
+message GetUserRequest {
+  // ID of the user to retrieve
+  string id = 1;
+}
+
+// GetUserResponse is the response type for the GetUser RPC
+message GetUserResponse {
+  // The requested user information
+  User user = 1;
+}
+
+// CreateUserRequest is the request type for the CreateUser RPC
+message CreateUserRequest {
+  // First name for the new user
+  string first_name = 1;
+  
+  // Last name for the new user
+  string last_name = 2;
+  
+  // Email address for the new user
+  string email = 3;
+}
+
+// CreateUserResponse is the response type for the CreateUser RPC
+message CreateUserResponse {
+  // The created user information
+  User user = 1;
+} 
