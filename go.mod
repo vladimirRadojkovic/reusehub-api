@@ -1,4 +1,4 @@
-module vladimirRadojkovic/reusehub-api
+module github.com/vladimirRadojkovic/reusehub-api
 
 go 1.24.1
 
