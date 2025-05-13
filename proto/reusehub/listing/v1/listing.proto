@@ -1,0 +1,113 @@
+syntax = "proto3";
+
+package reusehub.listing.v1;
+
+option go_package = "genproto/reusehub/listing/v1;listingv1";
+
+// ListingService provides operations for managing listings
+service ListingService {
+  // GetListing retrieves a listing by ID
+  rpc GetListing(GetListingRequest) returns (GetListingResponse) {}
+  
+  // CreateListing creates a new listing
+  rpc CreateListing(CreateListingRequest) returns (CreateListingResponse) {}
+  
+  // SearchListings searches for listings with filters
+  rpc SearchListings(SearchListingsRequest) returns (SearchListingsResponse) {}
+}
+
+// Listing represents a listing in the system
+message Listing {
+  // Unique identifier for the listing
+  string id = 1;
+  
+  // Title of the listing
+  string title = 2;
+  
+  // Description of the listing
+  string description = 3;
+  
+  // Price of the listing
+  double price = 4;
+  
+  // Category of the listing
+  string category = 5;
+  
+  // ID of the user who created the listing
+  string user_id = 6;
+  
+  // Timestamp when the listing was created
+  int64 created_at = 7;
+  
+  // Timestamp when the listing was last updated
+  int64 updated_at = 8;
+}
+
+// GetListingRequest is the request type for the GetListing RPC
+message GetListingRequest {
+  // ID of the listing to retrieve
+  string id = 1;
+}
+
+// GetListingResponse is the response type for the GetListing RPC
+message GetListingResponse {
+  // The requested listing information
+  Listing listing = 1;
+}
+
+// CreateListingRequest is the request type for the CreateListing RPC
+message CreateListingRequest {
+  // Title for the new listing
+  string title = 1;
+  
+  // Description for the new listing
+  string description = 2;
+  
+  // Price for the new listing
+  double price = 3;
+  
+  // Category for the new listing
+  string category = 4;
+  
+  // ID of the user creating the listing
+  string user_id = 5;
+}
+
+// CreateListingResponse is the response type for the CreateListing RPC
+message CreateListingResponse {
+  // The created listing information
+  Listing listing = 1;
+}
+
+// SearchListingsRequest is the request type for the SearchListings RPC
+message SearchListingsRequest {
+  // Optional search query
+  string query = 1;
+  
+  // Optional category filter
+  string category = 2;
+  
+  // Optional minimum price filter
+  double min_price = 3;
+  
+  // Optional maximum price filter
+  double max_price = 4;
+  
+  // Page size for pagination
+  int32 page_size = 5;
+  
+  // Page token for pagination
+  string page_token = 6;
+}
+
+// SearchListingsResponse is the response type for the SearchListings RPC
+message SearchListingsResponse {
+  // The listings matching the search criteria
+  repeated Listing listings = 1;
+  
+  // Next page token for pagination
+  string next_page_token = 2;
+  
+  // Total number of listings matching the search criteria
+  int32 total_size = 3;
+} 
