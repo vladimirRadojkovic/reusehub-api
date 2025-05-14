@@ -17,13 +17,13 @@ The API currently includes:
 
 ```
 reusehub-api/
-├── genproto/          # Generated Go code from proto files
-├── ts-proto/          # Generated TypeScript code from proto files
-├── proto/             # Protocol Buffer definitions
+├── genproto/           # Generated Go code from proto files
+├── ts-proto/           # Generated TypeScript code from proto files
+├── proto/              # Protocol Buffer definitions
 │   └── reusehub/
-│       ├── user/v1/       # User service definitions
-│       └── listing/v1/    # Listing service definitions
-└── Makefile           # Build commands
+│       ├── user/v1/        # User service definitions
+│       └── listing/v1/     # Listing service definitions
+└── Makefile            # Build commands
 ```
 
 ## Requirements
@@ -112,39 +112,67 @@ func main() {
 
 ## Using the Generated TypeScript Code
 
-The TypeScript files can be used in frontend applications:
+The TypeScript files can be used in React applications with the Connect framework. The code is generated using `@bufbuild/connect-web` which provides a modern, type-safe way to call gRPC services from browsers.
 
-### 1. Copy the TypeScript files to your project
-
-```bash
-cp -r ts-proto/proto/* /path/to/frontend/src/api/
-```
-
-### 2. Install required dependencies in your frontend project
+### 1. Copy the TypeScript files to your React project
 
 ```bash
-npm install @grpc/grpc-js @grpc/proto-loader
+cp -r ts-proto/proto/* /path/to/react-app/src/api/
 ```
 
-### 3. Import and use the generated code
+### 2. Install required dependencies in your React project
 
-```typescript
-import { UserServiceClient } from './api/reusehub/user/v1/user';
-import { GrpcTransport } from '@protobuf-ts/grpc-transport';
+```bash
+npm install @bufbuild/protobuf @bufbuild/connect @bufbuild/connect-web
+```
+
+### 3. Import and use the generated code in React
+
+```tsx
+import { createConnectTransport } from "@bufbuild/connect-web";
+import { createPromiseClient } from "@bufbuild/connect";
+import { UserService } from "./api/proto/reusehub/user/v1/user_connect";
+import { useState, useEffect } from "react";
+
+// Set up the transport
+const transport = createConnectTransport({
+  baseUrl: "http://localhost:8080", // Your API endpoint
+});
 
 // Create a client
-const transport = new GrpcTransport({
-  host: "localhost:50051",
-});
-const client = new UserServiceClient(transport);
+const client = createPromiseClient(UserService, transport);
 
-// Call methods
-async function getUser(id: string) {
-  const response = await client.getUser({ id });
-  console.log(response.user);
+function UserProfile({ userId }) {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function fetchUser() {
+      try {
+        setLoading(true);
+        const response = await client.getUser({ id: userId });
+        setUser(response.user);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchUser();
+  }, [userId]);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+  
+  return (
+    <div>
+      <h1>{user.firstName} {user.lastName}</h1>
+      <p>Email: {user.email}</p>
+    </div>
+  );
 }
-
-getUser("user-123");
 ```
 
 ## Adding New Services
@@ -153,3 +181,7 @@ getUser("user-123");
 2. Define your service, requests, and responses
 3. Set the `go_package` option to match the directory structure
 4. Run `make generate` to generate both Go and TypeScript code
+
+## Versioning
+
+The API uses semantic versioning. The current version is found in the git tags.

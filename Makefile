@@ -1,3 +1,5 @@
+.PHONY: generate clean
+
 # Generate protobuf code
 generate:
 	docker build --platform=linux/amd64 -f proto/Dockerfile -t reusehub-genproto:dev .
