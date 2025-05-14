@@ -1,4 +1,4 @@
-FROM node:18-bullseye AS node-base
+FROM node:22-bullseye AS node-base
 
 # Install TypeScript protobuf plugins
 RUN npm install -g @bufbuild/protoc-gen-es @bufbuild/protoc-gen-connect-es @bufbuild/protobuf @bufbuild/connect @bufbuild/connect-web
