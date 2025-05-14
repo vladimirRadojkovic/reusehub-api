@@ -1,10 +1,14 @@
 # ReuseHub API
 
-A gRPC API service for ReuseHub built with Go.
+A gRPC API service for ReuseHub built with Go, with TypeScript client support.
 
 ## Overview
 
-This repository contains Protocol Buffer definitions for ReuseHub microservices and the generated Go code. The API currently includes:
+This repository contains Protocol Buffer definitions for ReuseHub microservices and the generated code:
+- Go code for server implementations
+- TypeScript code for client applications
+
+The API currently includes:
 
 - **User Service**: Manage user accounts
 - **Listing Service**: Manage product/item listings
@@ -14,6 +18,7 @@ This repository contains Protocol Buffer definitions for ReuseHub microservices 
 ```
 reusehub-api/
 ├── genproto/          # Generated Go code from proto files
+├── ts-proto/          # Generated TypeScript code from proto files
 ├── proto/             # Protocol Buffer definitions
 │   └── reusehub/
 │       ├── user/v1/       # User service definitions
@@ -31,7 +36,7 @@ reusehub-api/
 
 ### Generating Code
 
-To generate Go code from the Protocol Buffer definitions:
+To generate both Go and TypeScript code from the Protocol Buffer definitions:
 
 ```bash
 make generate
@@ -40,6 +45,7 @@ make generate
 This will:
 1. Build a Docker image with the protoc compiler and required plugins
 2. Run the container to generate Go code in the `genproto` directory
+3. Generate TypeScript code in the `ts-proto` directory
 
 ### Cleaning Generated Files
 
@@ -47,7 +53,7 @@ This will:
 make clean
 ```
 
-## Using the Generated Code
+## Using the Generated Go Code
 
 Import the generated packages in your Go code:
 
@@ -104,9 +110,46 @@ func main() {
 }
 ```
 
+## Using the Generated TypeScript Code
+
+The TypeScript files can be used in frontend applications:
+
+### 1. Copy the TypeScript files to your project
+
+```bash
+cp -r ts-proto/proto/* /path/to/frontend/src/api/
+```
+
+### 2. Install required dependencies in your frontend project
+
+```bash
+npm install @grpc/grpc-js @grpc/proto-loader
+```
+
+### 3. Import and use the generated code
+
+```typescript
+import { UserServiceClient } from './api/reusehub/user/v1/user';
+import { GrpcTransport } from '@protobuf-ts/grpc-transport';
+
+// Create a client
+const transport = new GrpcTransport({
+  host: "localhost:50051",
+});
+const client = new UserServiceClient(transport);
+
+// Call methods
+async function getUser(id: string) {
+  const response = await client.getUser({ id });
+  console.log(response.user);
+}
+
+getUser("user-123");
+```
+
 ## Adding New Services
 
 1. Create a new proto file in the appropriate directory under `proto/reusehub/`
 2. Define your service, requests, and responses
 3. Set the `go_package` option to match the directory structure
-4. Run `make generate` to generate the Go code
+4. Run `make generate` to generate both Go and TypeScript code

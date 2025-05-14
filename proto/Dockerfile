@@ -1,9 +1,9 @@
-FROM golang:1.24.3
+FROM golang:1.24.1
 
 WORKDIR /workspace
 
 RUN apt-get update && \
-    apt-get install -y bzip2 xz-utils unzip
+    apt-get install -y bzip2 xz-utils unzip nodejs npm
 
 # Install protoc
 RUN curl -LO https://github.com/protocolbuffers/protobuf/releases/download/v26.1/protoc-26.1-linux-x86_64.zip && \
@@ -18,8 +18,17 @@ RUN go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.33.0 && \
     go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.3.0 && \
     go install go.einride.tech/aip/cmd/protoc-gen-go-aip@v0.67.1
 
-# Add Go bin to PATH
-ENV PATH="/go/bin:${PATH}"
+# Install TypeScript protoc plugins
+RUN npm install -g ts-proto protoc-gen-ts
 
-# The CMD that will be run when the container starts
-CMD ["protoc", "--proto_path=.", "--go_out=.", "--go-grpc_out=.", "proto/reusehub/user/v1/user.proto", "proto/reusehub/listing/v1/listing.proto"]
+# Add Go bin to PATH
+ENV PATH="/go/bin:/usr/local/bin/node_modules/.bin:${PATH}"
+
+# Generate both Go and TypeScript code
+CMD protoc \
+    --proto_path=. \
+    --go_out=. \
+    --go-grpc_out=. \
+    --plugin=protoc-gen-ts=`which protoc-gen-ts` \
+    --ts_out="service=grpc-web:./ts-proto" \
+    proto/reusehub/user/v1/user.proto proto/reusehub/listing/v1/listing.proto
