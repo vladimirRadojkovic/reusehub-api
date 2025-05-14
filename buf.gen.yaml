@@ -4,10 +4,12 @@ plugins:
     out: ts-proto
     opt:
       - target=ts
+      - import_extension=none
   - plugin: connect-es
     out: ts-proto
     opt:
       - target=ts
+      - import_extension=none
   - plugin: go
     out: genproto
     opt: paths=source_relative

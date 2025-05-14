@@ -10,12 +10,20 @@ RUN curl -sSL \
     -o "/usr/local/bin/buf" && \
     chmod +x "/usr/local/bin/buf"
 
-# Install protoc-gen-es and protoc-gen-connect-es
-RUN npm install -g @bufbuild/protoc-gen-es @bufbuild/protoc-gen-connect-es
+# Install protoc
+RUN apt-get update && apt-get install -y protobuf-compiler
+
+# Set Go proxy for public modules
+ENV GOPROXY=https://proxy.golang.org,direct
 
 # Install Go protobuf plugins
 RUN go install google.golang.org/protobuf/cmd/protoc-gen-go@latest \
     && go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+
+# Install protoc-gen-es and protoc-gen-connect-es with npm
+RUN npm install -g @bufbuild/protoc-gen-es @bufbuild/protoc-gen-connect-es && \
+    ln -s /usr/local/lib/node_modules/@bufbuild/protoc-gen-es/bin/protoc-gen-es /usr/local/bin/protoc-gen-es && \
+    ln -s /usr/local/lib/node_modules/@bufbuild/protoc-gen-connect-es/bin/protoc-gen-connect-es /usr/local/bin/protoc-gen-connect-es
 
 WORKDIR /workspace
 
