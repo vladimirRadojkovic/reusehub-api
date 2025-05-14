@@ -1,0 +1,6 @@
+version: v1
+name: buf.build/vladimirRadojkovic/reusehub-api
+deps:
+  - buf.build/googleapis/googleapis
+build:
+  excludes: [] 

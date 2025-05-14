@@ -1,0 +1,16 @@
+version: v1
+plugins:
+  - plugin: es
+    out: ts-proto
+    opt:
+      - target=ts
+  - plugin: connect-es
+    out: ts-proto
+    opt:
+      - target=ts
+  - plugin: go
+    out: genproto
+    opt: paths=source_relative
+  - plugin: go-grpc
+    out: genproto
+    opt: paths=source_relative 

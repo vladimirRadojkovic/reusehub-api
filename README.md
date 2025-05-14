@@ -23,13 +23,14 @@ reusehub-api/
 │   └── reusehub/
 │       ├── user/v1/        # User service definitions
 │       └── listing/v1/     # Listing service definitions
+├── buf.yaml            # Buf configuration
+├── buf.gen.yaml        # Buf code generation configuration
 └── Makefile            # Build commands
 ```
 
 ## Requirements
 
 - Docker
-- Go 1.24+
 - Make
 
 ## Usage
@@ -43,9 +44,10 @@ make generate
 ```
 
 This will:
-1. Build a Docker image with the protoc compiler and required plugins
-2. Run the container to generate Go code in the `genproto` directory
-3. Generate TypeScript code in the `ts-proto` directory
+1. Build a Docker image with buf, protoc, and required plugins
+2. Update buf dependencies
+3. Generate Go code in the `genproto` directory
+4. Generate TypeScript code in the `ts-proto` directory
 
 ### Cleaning Generated Files
 
@@ -112,7 +114,7 @@ func main() {
 
 ## Using the Generated TypeScript Code
 
-The TypeScript files can be used in React applications with the Connect framework. The code is generated using `@bufbuild/connect-web` which provides a modern, type-safe way to call gRPC services from browsers.
+The TypeScript files are generated using `@bufbuild/protoc-gen-es` and `@bufbuild/protoc-gen-connect-es`, which provide modern, type-safe way to call gRPC services from browsers.
 
 ### 1. Copy the TypeScript files to your React project
 
