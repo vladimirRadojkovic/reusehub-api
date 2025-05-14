@@ -5,7 +5,11 @@ generate:
 	docker build -f proto/Dockerfile -t reusehub-genproto:dev .
 	rm -rf genproto ts-proto
 	mkdir -p genproto ts-proto
-	docker run --rm -v "${PWD}:/workspace" reusehub-genproto:dev
+	docker run --rm -v "${PWD}:/workspace" \
+		-v "${PWD}/buf.yaml:/workspace/buf.yaml" \
+		-v "${PWD}/buf.gen.yaml:/workspace/buf.gen.yaml" \
+		-v "${PWD}/proto:/workspace/proto" \
+		reusehub-genproto:dev
 
 # Clean generated files
 clean:
