@@ -1,42 +1,45 @@
-FROM golang:1.24.3-bullseye
+FROM golang:1.24 AS go-builder
 
-ENV PATH /workspace/node_modules/.bin:$PATH
-ENV NODE_VERSION=22.0.0
+RUN apt-get update && apt-get install -y git
 
-WORKDIR /workspace
+RUN go install google.golang.org/protobuf/cmd/protoc-gen-go@latest && \
+    go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
 
-RUN apt-get update && \
-    apt-get install -y bzip2 xz-utils unzip
+FROM node:22-slim
+
+# Install dependencies
+RUN apt-get update && apt-get install -y \
+    curl \
+    unzip \
+    git \
+    bash \
+    && rm -rf /var/lib/apt/lists/*
+
+# Kopiraj go plugin-e iz prethodnog stage-a u /usr/local/bin
+COPY --from=go-builder /go/bin/protoc-gen-go /usr/local/bin/
+COPY --from=go-builder /go/bin/protoc-gen-go-grpc /usr/local/bin/
 
 # Install protoc
-RUN curl -LO https://github.com/protocolbuffers/protobuf/releases/download/v26.1/protoc-26.1-linux-x86_64.zip && \
-    unzip protoc-26.1-linux-x86_64.zip -d /usr/local
+RUN curl -OL https://github.com/protocolbuffers/protobuf/releases/download/v26.1/protoc-26.1-linux-x86_64.zip && \
+    unzip protoc-26.1-linux-x86_64.zip -d /usr/local && \
+    rm protoc-26.1-linux-x86_64.zip
 
 # Install buf
-RUN curl -o /usr/local/bin/buf -LO https://github.com/bufbuild/buf/releases/download/v1.30.1/buf-Linux-x86_64 && \
+RUN curl -sSL https://github.com/bufbuild/buf/releases/download/v1.32.1/buf-Linux-x86_64 -o /usr/local/bin/buf && \
     chmod +x /usr/local/bin/buf
 
-# Install Go protoc plugins
-RUN go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.33.0 && \
-    go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.3.0
+# Instaliraj TypeScript plugin za protoc
+RUN npm install -g protoc-gen-ts @bufbuild/protoc-gen-es @bufbuild/protoc-gen-connect-es
 
-# Setup Node.js
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
-ENV NVM_DIR=/root/.nvm
-RUN . $NVM_DIR/nvm.sh && nvm install $NODE_VERSION && nvm use $NODE_VERSION && nvm alias default $NODE_VERSION
-ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
-ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
+# Install protoc-gen-grpc-web binary
+RUN curl -sSL https://github.com/grpc/grpc-web/releases/download/1.5.3/protoc-gen-grpc-web-1.5.3-linux-x86_64 \
+    -o /usr/local/bin/protoc-gen-grpc-web && \
+    chmod +x /usr/local/bin/protoc-gen-grpc-web
 
-# Install TypeScript plugins
-RUN npm install -g @bufbuild/protoc-gen-es @bufbuild/protoc-gen-connect-es
+# PATH za protokol buffer plugine
+ENV PATH="/usr/local/bin:$PATH"
 
-# Create package.json with exact dependencies
-RUN echo '{\
-  "dependencies": {\
-    "@bufbuild/protobuf": "^1.4.2",\
-    "@bufbuild/connect": "^0.13.0",\
-    "@bufbuild/connect-web": "^0.13.0"\
-  }\
-}' > package.json && npm install
+# Radni direktorijum za montiranje proto fajlova
+WORKDIR /workspace
 
-ENTRYPOINT ["sh", "-c", "buf mod update && buf generate --include-imports"]
+CMD ["buf", "generate"]
