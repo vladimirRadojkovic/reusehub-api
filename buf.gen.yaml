@@ -1,9 +1,9 @@
 version: v1
 plugins:
   - plugin: go
-    out: genproto
+    out: .
   - plugin: go-grpc
-    out: genproto
+    out: .
   - plugin: es
     out: ts-proto
     opt: target=ts
