@@ -3,7 +3,8 @@ FROM golang:1.24 AS go-builder
 RUN apt-get update && apt-get install -y git
 
 RUN go install google.golang.org/protobuf/cmd/protoc-gen-go@latest && \
-    go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+    go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest && \
+    go install github.com/bufbuild/connect-go/cmd/protoc-gen-connect-go@latest
 
 FROM node:22-slim
 
@@ -18,6 +19,7 @@ RUN apt-get update && apt-get install -y \
 # Kopiraj go plugin-e iz prethodnog stage-a u /usr/local/bin
 COPY --from=go-builder /go/bin/protoc-gen-go /usr/local/bin/
 COPY --from=go-builder /go/bin/protoc-gen-go-grpc /usr/local/bin/
+COPY --from=go-builder /go/bin/protoc-gen-connect-go /usr/local/bin/
 
 # Install protoc
 RUN curl -OL https://github.com/protocolbuffers/protobuf/releases/download/v26.1/protoc-26.1-linux-x86_64.zip && \

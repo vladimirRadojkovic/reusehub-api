@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             (unknown)
-// source: proto/reusehub/listing/v1/listing.proto
+// source: reusehub/listing/v1/listing.proto
 
 package listingv1
 
@@ -203,5 +203,5 @@ var ListingService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "proto/reusehub/listing/v1/listing.proto",
+	Metadata: "reusehub/listing/v1/listing.proto",
 }

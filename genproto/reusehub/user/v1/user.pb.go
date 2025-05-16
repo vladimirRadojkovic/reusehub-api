@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.6
 // 	protoc        (unknown)
-// source: proto/reusehub/user/v1/user.proto
+// source: reusehub/user/v1/user.proto
 
 package userv1
 
@@ -38,7 +38,7 @@ type User struct {
 
 func (x *User) Reset() {
 	*x = User{}
-	mi := &file_proto_reusehub_user_v1_user_proto_msgTypes[0]
+	mi := &file_reusehub_user_v1_user_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -50,7 +50,7 @@ func (x *User) String() string {
 func (*User) ProtoMessage() {}
 
 func (x *User) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_reusehub_user_v1_user_proto_msgTypes[0]
+	mi := &file_reusehub_user_v1_user_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -63,7 +63,7 @@ func (x *User) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use User.ProtoReflect.Descriptor instead.
 func (*User) Descriptor() ([]byte, []int) {
-	return file_proto_reusehub_user_v1_user_proto_rawDescGZIP(), []int{0}
+	return file_reusehub_user_v1_user_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *User) GetId() string {
@@ -105,7 +105,7 @@ type GetUserRequest struct {
 
 func (x *GetUserRequest) Reset() {
 	*x = GetUserRequest{}
-	mi := &file_proto_reusehub_user_v1_user_proto_msgTypes[1]
+	mi := &file_reusehub_user_v1_user_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -117,7 +117,7 @@ func (x *GetUserRequest) String() string {
 func (*GetUserRequest) ProtoMessage() {}
 
 func (x *GetUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_reusehub_user_v1_user_proto_msgTypes[1]
+	mi := &file_reusehub_user_v1_user_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -130,7 +130,7 @@ func (x *GetUserRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetUserRequest.ProtoReflect.Descriptor instead.
 func (*GetUserRequest) Descriptor() ([]byte, []int) {
-	return file_proto_reusehub_user_v1_user_proto_rawDescGZIP(), []int{1}
+	return file_reusehub_user_v1_user_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *GetUserRequest) GetId() string {
@@ -151,7 +151,7 @@ type GetUserResponse struct {
 
 func (x *GetUserResponse) Reset() {
 	*x = GetUserResponse{}
-	mi := &file_proto_reusehub_user_v1_user_proto_msgTypes[2]
+	mi := &file_reusehub_user_v1_user_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -163,7 +163,7 @@ func (x *GetUserResponse) String() string {
 func (*GetUserResponse) ProtoMessage() {}
 
 func (x *GetUserResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_reusehub_user_v1_user_proto_msgTypes[2]
+	mi := &file_reusehub_user_v1_user_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -176,7 +176,7 @@ func (x *GetUserResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetUserResponse.ProtoReflect.Descriptor instead.
 func (*GetUserResponse) Descriptor() ([]byte, []int) {
-	return file_proto_reusehub_user_v1_user_proto_rawDescGZIP(), []int{2}
+	return file_reusehub_user_v1_user_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *GetUserResponse) GetUser() *User {
@@ -201,7 +201,7 @@ type CreateUserRequest struct {
 
 func (x *CreateUserRequest) Reset() {
 	*x = CreateUserRequest{}
-	mi := &file_proto_reusehub_user_v1_user_proto_msgTypes[3]
+	mi := &file_reusehub_user_v1_user_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -213,7 +213,7 @@ func (x *CreateUserRequest) String() string {
 func (*CreateUserRequest) ProtoMessage() {}
 
 func (x *CreateUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_reusehub_user_v1_user_proto_msgTypes[3]
+	mi := &file_reusehub_user_v1_user_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -226,7 +226,7 @@ func (x *CreateUserRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateUserRequest.ProtoReflect.Descriptor instead.
 func (*CreateUserRequest) Descriptor() ([]byte, []int) {
-	return file_proto_reusehub_user_v1_user_proto_rawDescGZIP(), []int{3}
+	return file_reusehub_user_v1_user_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreateUserRequest) GetFirstName() string {
@@ -261,7 +261,7 @@ type CreateUserResponse struct {
 
 func (x *CreateUserResponse) Reset() {
 	*x = CreateUserResponse{}
-	mi := &file_proto_reusehub_user_v1_user_proto_msgTypes[4]
+	mi := &file_reusehub_user_v1_user_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -273,7 +273,7 @@ func (x *CreateUserResponse) String() string {
 func (*CreateUserResponse) ProtoMessage() {}
 
 func (x *CreateUserResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_reusehub_user_v1_user_proto_msgTypes[4]
+	mi := &file_reusehub_user_v1_user_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -286,7 +286,7 @@ func (x *CreateUserResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateUserResponse.ProtoReflect.Descriptor instead.
 func (*CreateUserResponse) Descriptor() ([]byte, []int) {
-	return file_proto_reusehub_user_v1_user_proto_rawDescGZIP(), []int{4}
+	return file_reusehub_user_v1_user_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *CreateUserResponse) GetUser() *User {
@@ -296,11 +296,11 @@ func (x *CreateUserResponse) GetUser() *User {
 	return nil
 }
 
-var File_proto_reusehub_user_v1_user_proto protoreflect.FileDescriptor
+var File_reusehub_user_v1_user_proto protoreflect.FileDescriptor
 
-const file_proto_reusehub_user_v1_user_proto_rawDesc = "" +
+const file_reusehub_user_v1_user_proto_rawDesc = "" +
 	"\n" +
-	"!proto/reusehub/user/v1/user.proto\x12\x10reusehub.user.v1\"h\n" +
+	"\x1breusehub/user/v1/user.proto\x12\x10reusehub.user.v1\"h\n" +
 	"\x04User\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\n" +
@@ -324,26 +324,26 @@ const file_proto_reusehub_user_v1_user_proto_rawDesc = "" +
 	"CreateUser\x12#.reusehub.user.v1.CreateUserRequest\x1a$.reusehub.user.v1.CreateUserResponse\"\x00B\"Z genproto/reusehub/user/v1;userv1b\x06proto3"
 
 var (
-	file_proto_reusehub_user_v1_user_proto_rawDescOnce sync.Once
-	file_proto_reusehub_user_v1_user_proto_rawDescData []byte
+	file_reusehub_user_v1_user_proto_rawDescOnce sync.Once
+	file_reusehub_user_v1_user_proto_rawDescData []byte
 )
 
-func file_proto_reusehub_user_v1_user_proto_rawDescGZIP() []byte {
-	file_proto_reusehub_user_v1_user_proto_rawDescOnce.Do(func() {
-		file_proto_reusehub_user_v1_user_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_proto_reusehub_user_v1_user_proto_rawDesc), len(file_proto_reusehub_user_v1_user_proto_rawDesc)))
+func file_reusehub_user_v1_user_proto_rawDescGZIP() []byte {
+	file_reusehub_user_v1_user_proto_rawDescOnce.Do(func() {
+		file_reusehub_user_v1_user_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_reusehub_user_v1_user_proto_rawDesc), len(file_reusehub_user_v1_user_proto_rawDesc)))
 	})
-	return file_proto_reusehub_user_v1_user_proto_rawDescData
+	return file_reusehub_user_v1_user_proto_rawDescData
 }
 
-var file_proto_reusehub_user_v1_user_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
-var file_proto_reusehub_user_v1_user_proto_goTypes = []any{
+var file_reusehub_user_v1_user_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_reusehub_user_v1_user_proto_goTypes = []any{
 	(*User)(nil),               // 0: reusehub.user.v1.User
 	(*GetUserRequest)(nil),     // 1: reusehub.user.v1.GetUserRequest
 	(*GetUserResponse)(nil),    // 2: reusehub.user.v1.GetUserResponse
 	(*CreateUserRequest)(nil),  // 3: reusehub.user.v1.CreateUserRequest
 	(*CreateUserResponse)(nil), // 4: reusehub.user.v1.CreateUserResponse
 }
-var file_proto_reusehub_user_v1_user_proto_depIdxs = []int32{
+var file_reusehub_user_v1_user_proto_depIdxs = []int32{
 	0, // 0: reusehub.user.v1.GetUserResponse.user:type_name -> reusehub.user.v1.User
 	0, // 1: reusehub.user.v1.CreateUserResponse.user:type_name -> reusehub.user.v1.User
 	1, // 2: reusehub.user.v1.UserService.GetUser:input_type -> reusehub.user.v1.GetUserRequest
@@ -357,26 +357,26 @@ var file_proto_reusehub_user_v1_user_proto_depIdxs = []int32{
 	0, // [0:2] is the sub-list for field type_name
 }
 
-func init() { file_proto_reusehub_user_v1_user_proto_init() }
-func file_proto_reusehub_user_v1_user_proto_init() {
-	if File_proto_reusehub_user_v1_user_proto != nil {
+func init() { file_reusehub_user_v1_user_proto_init() }
+func file_reusehub_user_v1_user_proto_init() {
+	if File_reusehub_user_v1_user_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_reusehub_user_v1_user_proto_rawDesc), len(file_proto_reusehub_user_v1_user_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_reusehub_user_v1_user_proto_rawDesc), len(file_reusehub_user_v1_user_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_proto_reusehub_user_v1_user_proto_goTypes,
-		DependencyIndexes: file_proto_reusehub_user_v1_user_proto_depIdxs,
-		MessageInfos:      file_proto_reusehub_user_v1_user_proto_msgTypes,
+		GoTypes:           file_reusehub_user_v1_user_proto_goTypes,
+		DependencyIndexes: file_reusehub_user_v1_user_proto_depIdxs,
+		MessageInfos:      file_reusehub_user_v1_user_proto_msgTypes,
 	}.Build()
-	File_proto_reusehub_user_v1_user_proto = out.File
-	file_proto_reusehub_user_v1_user_proto_goTypes = nil
-	file_proto_reusehub_user_v1_user_proto_depIdxs = nil
+	File_reusehub_user_v1_user_proto = out.File
+	file_reusehub_user_v1_user_proto_goTypes = nil
+	file_reusehub_user_v1_user_proto_depIdxs = nil
 }

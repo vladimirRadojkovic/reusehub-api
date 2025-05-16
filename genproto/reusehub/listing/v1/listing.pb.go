@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.6
 // 	protoc        (unknown)
-// source: proto/reusehub/listing/v1/listing.proto
+// source: reusehub/listing/v1/listing.proto
 
 package listingv1
 
@@ -46,7 +46,7 @@ type Listing struct {
 
 func (x *Listing) Reset() {
 	*x = Listing{}
-	mi := &file_proto_reusehub_listing_v1_listing_proto_msgTypes[0]
+	mi := &file_reusehub_listing_v1_listing_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -58,7 +58,7 @@ func (x *Listing) String() string {
 func (*Listing) ProtoMessage() {}
 
 func (x *Listing) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_reusehub_listing_v1_listing_proto_msgTypes[0]
+	mi := &file_reusehub_listing_v1_listing_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -71,7 +71,7 @@ func (x *Listing) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Listing.ProtoReflect.Descriptor instead.
 func (*Listing) Descriptor() ([]byte, []int) {
-	return file_proto_reusehub_listing_v1_listing_proto_rawDescGZIP(), []int{0}
+	return file_reusehub_listing_v1_listing_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Listing) GetId() string {
@@ -141,7 +141,7 @@ type GetListingRequest struct {
 
 func (x *GetListingRequest) Reset() {
 	*x = GetListingRequest{}
-	mi := &file_proto_reusehub_listing_v1_listing_proto_msgTypes[1]
+	mi := &file_reusehub_listing_v1_listing_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -153,7 +153,7 @@ func (x *GetListingRequest) String() string {
 func (*GetListingRequest) ProtoMessage() {}
 
 func (x *GetListingRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_reusehub_listing_v1_listing_proto_msgTypes[1]
+	mi := &file_reusehub_listing_v1_listing_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -166,7 +166,7 @@ func (x *GetListingRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetListingRequest.ProtoReflect.Descriptor instead.
 func (*GetListingRequest) Descriptor() ([]byte, []int) {
-	return file_proto_reusehub_listing_v1_listing_proto_rawDescGZIP(), []int{1}
+	return file_reusehub_listing_v1_listing_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *GetListingRequest) GetId() string {
@@ -187,7 +187,7 @@ type GetListingResponse struct {
 
 func (x *GetListingResponse) Reset() {
 	*x = GetListingResponse{}
-	mi := &file_proto_reusehub_listing_v1_listing_proto_msgTypes[2]
+	mi := &file_reusehub_listing_v1_listing_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -199,7 +199,7 @@ func (x *GetListingResponse) String() string {
 func (*GetListingResponse) ProtoMessage() {}
 
 func (x *GetListingResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_reusehub_listing_v1_listing_proto_msgTypes[2]
+	mi := &file_reusehub_listing_v1_listing_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -212,7 +212,7 @@ func (x *GetListingResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetListingResponse.ProtoReflect.Descriptor instead.
 func (*GetListingResponse) Descriptor() ([]byte, []int) {
-	return file_proto_reusehub_listing_v1_listing_proto_rawDescGZIP(), []int{2}
+	return file_reusehub_listing_v1_listing_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *GetListingResponse) GetListing() *Listing {
@@ -241,7 +241,7 @@ type CreateListingRequest struct {
 
 func (x *CreateListingRequest) Reset() {
 	*x = CreateListingRequest{}
-	mi := &file_proto_reusehub_listing_v1_listing_proto_msgTypes[3]
+	mi := &file_reusehub_listing_v1_listing_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -253,7 +253,7 @@ func (x *CreateListingRequest) String() string {
 func (*CreateListingRequest) ProtoMessage() {}
 
 func (x *CreateListingRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_reusehub_listing_v1_listing_proto_msgTypes[3]
+	mi := &file_reusehub_listing_v1_listing_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -266,7 +266,7 @@ func (x *CreateListingRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateListingRequest.ProtoReflect.Descriptor instead.
 func (*CreateListingRequest) Descriptor() ([]byte, []int) {
-	return file_proto_reusehub_listing_v1_listing_proto_rawDescGZIP(), []int{3}
+	return file_reusehub_listing_v1_listing_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreateListingRequest) GetTitle() string {
@@ -315,7 +315,7 @@ type CreateListingResponse struct {
 
 func (x *CreateListingResponse) Reset() {
 	*x = CreateListingResponse{}
-	mi := &file_proto_reusehub_listing_v1_listing_proto_msgTypes[4]
+	mi := &file_reusehub_listing_v1_listing_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -327,7 +327,7 @@ func (x *CreateListingResponse) String() string {
 func (*CreateListingResponse) ProtoMessage() {}
 
 func (x *CreateListingResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_reusehub_listing_v1_listing_proto_msgTypes[4]
+	mi := &file_reusehub_listing_v1_listing_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -340,7 +340,7 @@ func (x *CreateListingResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateListingResponse.ProtoReflect.Descriptor instead.
 func (*CreateListingResponse) Descriptor() ([]byte, []int) {
-	return file_proto_reusehub_listing_v1_listing_proto_rawDescGZIP(), []int{4}
+	return file_reusehub_listing_v1_listing_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *CreateListingResponse) GetListing() *Listing {
@@ -371,7 +371,7 @@ type SearchListingsRequest struct {
 
 func (x *SearchListingsRequest) Reset() {
 	*x = SearchListingsRequest{}
-	mi := &file_proto_reusehub_listing_v1_listing_proto_msgTypes[5]
+	mi := &file_reusehub_listing_v1_listing_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -383,7 +383,7 @@ func (x *SearchListingsRequest) String() string {
 func (*SearchListingsRequest) ProtoMessage() {}
 
 func (x *SearchListingsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_reusehub_listing_v1_listing_proto_msgTypes[5]
+	mi := &file_reusehub_listing_v1_listing_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -396,7 +396,7 @@ func (x *SearchListingsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SearchListingsRequest.ProtoReflect.Descriptor instead.
 func (*SearchListingsRequest) Descriptor() ([]byte, []int) {
-	return file_proto_reusehub_listing_v1_listing_proto_rawDescGZIP(), []int{5}
+	return file_reusehub_listing_v1_listing_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *SearchListingsRequest) GetQuery() string {
@@ -456,7 +456,7 @@ type SearchListingsResponse struct {
 
 func (x *SearchListingsResponse) Reset() {
 	*x = SearchListingsResponse{}
-	mi := &file_proto_reusehub_listing_v1_listing_proto_msgTypes[6]
+	mi := &file_reusehub_listing_v1_listing_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -468,7 +468,7 @@ func (x *SearchListingsResponse) String() string {
 func (*SearchListingsResponse) ProtoMessage() {}
 
 func (x *SearchListingsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_reusehub_listing_v1_listing_proto_msgTypes[6]
+	mi := &file_reusehub_listing_v1_listing_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -481,7 +481,7 @@ func (x *SearchListingsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SearchListingsResponse.ProtoReflect.Descriptor instead.
 func (*SearchListingsResponse) Descriptor() ([]byte, []int) {
-	return file_proto_reusehub_listing_v1_listing_proto_rawDescGZIP(), []int{6}
+	return file_reusehub_listing_v1_listing_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *SearchListingsResponse) GetListings() []*Listing {
@@ -505,11 +505,11 @@ func (x *SearchListingsResponse) GetTotalSize() int32 {
 	return 0
 }
 
-var File_proto_reusehub_listing_v1_listing_proto protoreflect.FileDescriptor
+var File_reusehub_listing_v1_listing_proto protoreflect.FileDescriptor
 
-const file_proto_reusehub_listing_v1_listing_proto_rawDesc = "" +
+const file_reusehub_listing_v1_listing_proto_rawDesc = "" +
 	"\n" +
-	"'proto/reusehub/listing/v1/listing.proto\x12\x13reusehub.listing.v1\"\xda\x01\n" +
+	"!reusehub/listing/v1/listing.proto\x12\x13reusehub.listing.v1\"\xda\x01\n" +
 	"\aListing\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
 	"\x05title\x18\x02 \x01(\tR\x05title\x12 \n" +
@@ -553,19 +553,19 @@ const file_proto_reusehub_listing_v1_listing_proto_rawDesc = "" +
 	"\x0eSearchListings\x12*.reusehub.listing.v1.SearchListingsRequest\x1a+.reusehub.listing.v1.SearchListingsResponse\"\x00B(Z&genproto/reusehub/listing/v1;listingv1b\x06proto3"
 
 var (
-	file_proto_reusehub_listing_v1_listing_proto_rawDescOnce sync.Once
-	file_proto_reusehub_listing_v1_listing_proto_rawDescData []byte
+	file_reusehub_listing_v1_listing_proto_rawDescOnce sync.Once
+	file_reusehub_listing_v1_listing_proto_rawDescData []byte
 )
 
-func file_proto_reusehub_listing_v1_listing_proto_rawDescGZIP() []byte {
-	file_proto_reusehub_listing_v1_listing_proto_rawDescOnce.Do(func() {
-		file_proto_reusehub_listing_v1_listing_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_proto_reusehub_listing_v1_listing_proto_rawDesc), len(file_proto_reusehub_listing_v1_listing_proto_rawDesc)))
+func file_reusehub_listing_v1_listing_proto_rawDescGZIP() []byte {
+	file_reusehub_listing_v1_listing_proto_rawDescOnce.Do(func() {
+		file_reusehub_listing_v1_listing_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_reusehub_listing_v1_listing_proto_rawDesc), len(file_reusehub_listing_v1_listing_proto_rawDesc)))
 	})
-	return file_proto_reusehub_listing_v1_listing_proto_rawDescData
+	return file_reusehub_listing_v1_listing_proto_rawDescData
 }
 
-var file_proto_reusehub_listing_v1_listing_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
-var file_proto_reusehub_listing_v1_listing_proto_goTypes = []any{
+var file_reusehub_listing_v1_listing_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
+var file_reusehub_listing_v1_listing_proto_goTypes = []any{
 	(*Listing)(nil),                // 0: reusehub.listing.v1.Listing
 	(*GetListingRequest)(nil),      // 1: reusehub.listing.v1.GetListingRequest
 	(*GetListingResponse)(nil),     // 2: reusehub.listing.v1.GetListingResponse
@@ -574,7 +574,7 @@ var file_proto_reusehub_listing_v1_listing_proto_goTypes = []any{
 	(*SearchListingsRequest)(nil),  // 5: reusehub.listing.v1.SearchListingsRequest
 	(*SearchListingsResponse)(nil), // 6: reusehub.listing.v1.SearchListingsResponse
 }
-var file_proto_reusehub_listing_v1_listing_proto_depIdxs = []int32{
+var file_reusehub_listing_v1_listing_proto_depIdxs = []int32{
 	0, // 0: reusehub.listing.v1.GetListingResponse.listing:type_name -> reusehub.listing.v1.Listing
 	0, // 1: reusehub.listing.v1.CreateListingResponse.listing:type_name -> reusehub.listing.v1.Listing
 	0, // 2: reusehub.listing.v1.SearchListingsResponse.listings:type_name -> reusehub.listing.v1.Listing
@@ -591,26 +591,26 @@ var file_proto_reusehub_listing_v1_listing_proto_depIdxs = []int32{
 	0, // [0:3] is the sub-list for field type_name
 }
 
-func init() { file_proto_reusehub_listing_v1_listing_proto_init() }
-func file_proto_reusehub_listing_v1_listing_proto_init() {
-	if File_proto_reusehub_listing_v1_listing_proto != nil {
+func init() { file_reusehub_listing_v1_listing_proto_init() }
+func file_reusehub_listing_v1_listing_proto_init() {
+	if File_reusehub_listing_v1_listing_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_reusehub_listing_v1_listing_proto_rawDesc), len(file_proto_reusehub_listing_v1_listing_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_reusehub_listing_v1_listing_proto_rawDesc), len(file_reusehub_listing_v1_listing_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   7,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_proto_reusehub_listing_v1_listing_proto_goTypes,
-		DependencyIndexes: file_proto_reusehub_listing_v1_listing_proto_depIdxs,
-		MessageInfos:      file_proto_reusehub_listing_v1_listing_proto_msgTypes,
+		GoTypes:           file_reusehub_listing_v1_listing_proto_goTypes,
+		DependencyIndexes: file_reusehub_listing_v1_listing_proto_depIdxs,
+		MessageInfos:      file_reusehub_listing_v1_listing_proto_msgTypes,
 	}.Build()
-	File_proto_reusehub_listing_v1_listing_proto = out.File
-	file_proto_reusehub_listing_v1_listing_proto_goTypes = nil
-	file_proto_reusehub_listing_v1_listing_proto_depIdxs = nil
+	File_reusehub_listing_v1_listing_proto = out.File
+	file_reusehub_listing_v1_listing_proto_goTypes = nil
+	file_reusehub_listing_v1_listing_proto_depIdxs = nil
 }
