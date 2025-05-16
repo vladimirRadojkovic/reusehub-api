@@ -321,7 +321,7 @@ const file_reusehub_user_v1_user_proto_rawDesc = "" +
 	"\vUserService\x12P\n" +
 	"\aGetUser\x12 .reusehub.user.v1.GetUserRequest\x1a!.reusehub.user.v1.GetUserResponse\"\x00\x12Y\n" +
 	"\n" +
-	"CreateUser\x12#.reusehub.user.v1.CreateUserRequest\x1a$.reusehub.user.v1.CreateUserResponse\"\x00B\"Z genproto/reusehub/user/v1;userv1b\x06proto3"
+	"CreateUser\x12#.reusehub.user.v1.CreateUserRequest\x1a$.reusehub.user.v1.CreateUserResponse\"\x00BMZKgithub.com/vladimirRadojkovic/reusehub-api/genproto/reusehub/user/v1;userv1b\x06proto3"
 
 var (
 	file_reusehub_user_v1_user_proto_rawDescOnce sync.Once

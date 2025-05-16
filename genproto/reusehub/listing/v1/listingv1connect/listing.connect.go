@@ -7,8 +7,8 @@ package listingv1connect
 import (
 	context "context"
 	errors "errors"
-	v1 "genproto/reusehub/listing/v1"
 	connect_go "github.com/bufbuild/connect-go"
+	v1 "github.com/vladimirRadojkovic/reusehub-api/genproto/reusehub/listing/v1"
 	http "net/http"
 	strings "strings"
 )

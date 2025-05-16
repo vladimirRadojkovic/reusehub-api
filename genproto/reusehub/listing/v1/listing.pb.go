@@ -550,7 +550,7 @@ const file_reusehub_listing_v1_listing_proto_rawDesc = "" +
 	"\n" +
 	"GetListing\x12&.reusehub.listing.v1.GetListingRequest\x1a'.reusehub.listing.v1.GetListingResponse\"\x00\x12h\n" +
 	"\rCreateListing\x12).reusehub.listing.v1.CreateListingRequest\x1a*.reusehub.listing.v1.CreateListingResponse\"\x00\x12k\n" +
-	"\x0eSearchListings\x12*.reusehub.listing.v1.SearchListingsRequest\x1a+.reusehub.listing.v1.SearchListingsResponse\"\x00B(Z&genproto/reusehub/listing/v1;listingv1b\x06proto3"
+	"\x0eSearchListings\x12*.reusehub.listing.v1.SearchListingsRequest\x1a+.reusehub.listing.v1.SearchListingsResponse\"\x00BSZQgithub.com/vladimirRadojkovic/reusehub-api/genproto/reusehub/listing/v1;listingv1b\x06proto3"
 
 var (
 	file_reusehub_listing_v1_listing_proto_rawDescOnce sync.Once
