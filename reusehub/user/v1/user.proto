@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package reusehub.user.v1;
 
-option go_package = "genproto/reusehub/user/v1;userv1";
+option go_package = "github.com/vladimirRadojkovic/reusehub-api/genproto/reusehub/user/v1;userv1";
 
 // UserService provides operations for managing users
 service UserService {

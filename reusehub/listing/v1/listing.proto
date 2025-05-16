@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package reusehub.listing.v1;
 
-option go_package = "genproto/reusehub/listing/v1;listingv1";
+option go_package = "github.com/vladimirRadojkovic/reusehub-api/genproto/reusehub/listing/v1;listingv1";
 
 // ListingService provides operations for managing listings
 service ListingService {
