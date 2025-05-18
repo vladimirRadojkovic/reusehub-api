@@ -23,5 +23,8 @@
     "connect",
     "ts-proto",
     "reusehub"
-  ]
+  ],
+  "dependencies": {
+    "@bufbuild/protobuf": "^2.4.0"
+  }
 }
