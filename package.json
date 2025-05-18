@@ -1,0 +1,27 @@
+{
+  "name": "reusehub-api",
+  "version": "1.0.1",
+  "description": "Generated TypeScript client code from protobuf definitions for ReuseHub using connect-go/ts-proto.",
+  "main": "index.ts",
+  "types": "index.ts",
+  "files": [
+    "ts-proto",
+    "index.ts"
+  ],
+  "scripts": {
+    "build": "make generate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vladimirRadojkovic/reusehub-api"
+  },
+  "author": "Vladimir Radojkovic",
+  "license": "MIT",
+  "keywords": [
+    "protobuf",
+    "grpc",
+    "connect",
+    "ts-proto",
+    "reusehub"
+  ]
+}
