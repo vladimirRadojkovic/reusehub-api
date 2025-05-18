@@ -1,6 +1,6 @@
 {
   "name": "reusehub-api",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Generated TypeScript client code from protobuf definitions for ReuseHub using connect-go/ts-proto.",
   "main": "index.ts",
   "types": "index.ts",
