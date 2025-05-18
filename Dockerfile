@@ -31,7 +31,7 @@ RUN curl -sSL https://github.com/bufbuild/buf/releases/download/v1.32.1/buf-Linu
     chmod +x /usr/local/bin/buf
 
 # Instaliraj TypeScript plugin za protoc
-RUN npm install -g protoc-gen-ts @bufbuild/protoc-gen-es @bufbuild/protoc-gen-connect-es
+RUN npm install -g @bufbuild/protoc-gen-es @bufbuild/protoc-gen-connect-es
 
 # Install protoc-gen-grpc-web binary
 RUN curl -sSL https://github.com/grpc/grpc-web/releases/download/1.5.3/protoc-gen-grpc-web-1.5.3-linux-x86_64 \
