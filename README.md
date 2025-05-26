@@ -182,8 +182,52 @@ function UserProfile({ userId }) {
 1. Create a new proto file in the appropriate directory under `proto/reusehub/`
 2. Define your service, requests, and responses
 3. Set the `go_package` option to match the directory structure
-4. Run `make generate` to generate both Go and TypeScript code
+4. Update the version in `package.json` following semantic versioning:
+   - **Patch** (1.0.x): Bug fixes, minor changes that don't break compatibility
+   - **Minor** (1.x.0): New features, new services, backward-compatible changes
+   - **Major** (x.0.0): Breaking changes, incompatible API changes
+5. Run `make generate` to generate both Go and TypeScript code
+6. Commit and tag the release with the new version number
 
 ## Versioning
 
-The API uses semantic versioning. The current version is found in the git tags.
+The API uses semantic versioning. The current version is found in the git tags and `package.json`.
+
+### Updating Version
+
+When making changes to the API, update the version in `package.json`:
+
+```bash
+# For patch releases (bug fixes)
+npm version patch
+
+# For minor releases (new features, new services)
+npm version minor
+
+# For major releases (breaking changes)
+npm version major
+```
+
+**Note**: `npm version` automatically creates a git commit and tag, so make sure all your changes are committed first.
+
+After running `npm version`:
+1. Run `make generate` to regenerate code with the new version
+2. Push the changes and tags: `git push && git push --tags`
+3. If publishing to npm registry: `npm publish`
+
+Alternatively, you can manually edit the `version` field in `package.json`:
+
+```json
+{
+  "name": "reusehub-api",
+  "version": "1.1.0",
+  ...
+}
+```
+
+For manual version updates:
+1. Run `make generate` to regenerate code
+2. Commit your changes: `git add . && git commit -m "Release v1.1.0"`
+3. Create a git tag: `git tag v1.1.0`
+4. Push changes and tags: `git push && git push --tags`
+5. If publishing to npm registry: `npm publish`
